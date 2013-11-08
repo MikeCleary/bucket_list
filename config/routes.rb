@@ -1,4 +1,9 @@
 BucketList::Application.routes.draw do
+  root :to => "pages#homepage"
+  get "pages/homepage"
+  resources :destinations, :only => [:create, :show, :new]
+  resources :todos, :only => [:create]
+  devise_for :travellers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

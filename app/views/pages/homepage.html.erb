@@ -1,0 +1,17 @@
+<div id="form_for_destination">
+  <%= form_for @destination, :remote => true do |f| %>
+    <%= render :partial => "pages/form", :locals => {:f => f} %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<ul id="destinations">
+  <% @destinations.each do |destination| %>
+    <%= render :partial => 'destinations/destination', :locals => {:destination => destination} %>
+    <ul id="todos_for_destination_<%= destination.id %>"> 
+      <% destination.todos.each do |todo| %>
+        <%= render :partial => "todos/todo", :locals => {:todo => todo, :destination => destination} %>
+        <% end %>
+    </ul>
+  <% end %>
+</ul>
