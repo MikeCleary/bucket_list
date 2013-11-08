@@ -14,6 +14,6 @@ class TodosController < ApplicationController
 
   private
   def todo_params
-    params.require(:todo).permit(:name, :image_url, :traveller_id, :destination_id)
+    params.require(:todo).permit(:name, :image_url, :traveller_id, :destination_id, :priority)
   end
 end

@@ -5,6 +5,8 @@
     <%= form_for @todo, :remote => true do |f| %>
       <%= f.hidden_field :destination_id %>
       <%= render :partial => "pages/form", :locals => {:f => f, :destination => destination}%>
+      <%= f.label :priority %>
+      <%= f.text_field :priority %>
       <%= f.submit %>
     <% end %>
   </div>
