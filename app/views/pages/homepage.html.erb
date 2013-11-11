@@ -1,6 +1,6 @@
 <div id="form_for_destination">
   <%= form_for @destination, :remote => true do |f| %>
-    <%= render :partial => "pages/form", :locals => {:f => f} %>
+    <%= render :partial => "pages/form", :locals => {:f => f} %></br>
     <%= f.submit %>
   <% end %>
 </div>

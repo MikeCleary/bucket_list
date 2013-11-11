@@ -1,12 +1,14 @@
 <li id="destination_<%= destination.id %>">
-  <%= image_tag(destination.image_url) %><h2><%= destination.name %></h2>
+  <%= image_tag(destination.image_url,  :class => "destination_image") %><h2><%= destination.name %></h2>
   <div class="todo_form" id="todo_form_for_destination_<%= destination.id %>">
     <% @todo = Todo.new(:destination_id => destination.id) %>
-    <%= form_for [destination, @todo], :remote => true do |f| %>
-      <%= f.hidden_field :destination_id %>
+    <%= form_for [destination, @todo],:class =>"todo_form", :remote => true do |f| %>
+      <%= f.hidden_field :destination_id %></br>
       <%= render :partial => "pages/form", :locals => {:f => f, :destination => destination}%>
-      <%= f.label :priority %>
-      <%= f.text_field :priority %>
+      <%= f.label :location %></br>
+      <%= f.text_field :location, :placeholder => "Enter a location to map this item..." %></br>
+      <%= f.label :priority %></br>
+      <%= f.text_field :priority %></br>
       <%= f.submit %>
     <% end %>
   </div>

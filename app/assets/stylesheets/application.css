@@ -12,10 +12,48 @@
  *= require_tree .
  */
 
+body {
+  font-family: sans-serif;
+}
+
  #map_ground {
-  width: 1100px;
-  height: 1000px;
+  width: 1600px;
+  height: 2000px;
   position: absolute;
   top: 0px;
   z-index: -1;
  }
+
+#main {
+  width: 1100px;
+  margin: auto;
+}
+
+img {
+  width: 400px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+#form_for_destination, .todo_form {
+  background: #A2D8FC;
+  border-radius: 4px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+
+.todo_form {
+  /*display: none;*/
+}
+
+input {
+  margin-bottom: 5px;
+}
