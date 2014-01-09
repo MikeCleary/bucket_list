@@ -13,7 +13,12 @@ class TodosController < ApplicationController
   end
 
   def index 
-    @todos = Destination.includes(:todos).where("todos.destination_id =?", params[:destination_id])
+    @todos = Todo.order(:priority)
+    respond_to do |format|
+      #Replies with a JSON object we can use for rendering map markers
+      format.json { render :json => @todos.as_json(:only => [:latitude, :longitude, :name]) }
+      format.html
+    end
   end
 
   private

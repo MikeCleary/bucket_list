@@ -4,6 +4,9 @@ BucketList::Application.routes.draw do
   resources :destinations, :only => [:create, :show, :new] do 
     resources :todos, :only => [:create, :index]
   end
+
+  get "todos/index"
+
   devise_for :travellers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
